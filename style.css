@@ -31,7 +31,7 @@ h1{
     font-size: 250%;
 }
 
-#blueBackground {
+.blueBackground {
 	background-color: lightblue;
     text-align: center;
 }
@@ -46,4 +46,4 @@ p {
 
 #gray {
 	background-color: lightgray;
-}
+
