@@ -8,3 +8,42 @@
     width:350px;
 /*    float:left;*/
 }
+body {
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: top 200px;
+    background-image:url("http://www.toysrus.com/graphics/media/trus/Aplusplus/2013/072513/3444806/Blokus%20Game_3444806_02.jpg");
+}
+
+table {
+    border: 1px solid black;
+    margin-top:15px;
+}
+
+td {
+    border: 1px solid black;
+    width: 120px;
+}
+h1{
+    padding-bottom:0px;
+	padding-top:20px;
+    font-size: 250%;
+}
+
+#blueBackground {
+	background-color: lightblue;
+    text-align: center;
+}
+
+.preferred {
+	background-color: lightgray;
+}
+
+p {
+	padding-bottom:10px;
+}
+
+#gray {
+	background-color: lightgray;
+}
