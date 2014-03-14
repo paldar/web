@@ -82,6 +82,16 @@ h2 {
 	margin-top:90px;
 }
 
+p {
+	margin:10px;
+}
+
+ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
 .blueBackground {
     padding: 5px;
 	background-color: lightblue;
@@ -91,16 +101,6 @@ h2 {
 
 .preferred {
 	background-color: lightgray;
-}
-
-p {
-	margin:10px;
-}
-
-ul {
-	list-style-type:none;
-	margin:0;
-	padding:0;
 }
 
 .blokus_img {
