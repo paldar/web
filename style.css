@@ -5,19 +5,23 @@
  */
 
 body {
+	display: block;
 	font-family: Palatino;
-    width:80%;
-    height:100%;
-    margin: 0 auto;
-    background-image:url("http://www.toysrus.com/graphics/media/trus/Aplusplus/2013/072513/3444806/Blokus%20Game_3444806_02.jpg");
+	width:90%;
+	height:100%;
+	margin: 0 auto;
+	background-image:url("http://www.toysrus.com/graphics/media/trus/Aplusplus/2013/072513/3444806/Blokus%20Game_3444806_02.jpg");
 }
 
 header {
+    text-align: center;
 	font-style: oblique;
 }
 
 nav {
-	width:100%;
+    text-align: center;
+	padding: 0px;
+    width:100%;
 	margin-top: 20px;
 	margin-bottom: 100px;
 	border-radius: 10px;
@@ -49,6 +53,14 @@ nav ul li a {
 	background-color: #FF6600;
 }
 
+aside {
+    float: right;
+	position: fixed;
+	right: 5px;
+	margin: 15px;
+	margin-bottom: 200px;
+}
+
 table {
     border: 1px solid black;
     margin-top:15px;
@@ -71,9 +83,10 @@ h2 {
 }
 
 .blueBackground {
+    padding: 5px;
 	background-color: lightblue;
-    text-align: center;
 	border-radius: 10px;
+	width:80%;
 }
 
 .preferred {
@@ -91,7 +104,8 @@ ul {
 }
 
 .blokus_img {
-	width:300px;
+    float:left;
+	width:250px;
 	margin:15px;
 }
 
