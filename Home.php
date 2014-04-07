@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTMl>
     <head>
         <meta charset ="utf-8">
@@ -8,7 +9,7 @@
     </head>
     
     <body>
-        <div class="blueBackground">
+	<div class="blueBackground">
         <header>
         	<h1>Blokus</h1>
         </header>
@@ -18,27 +19,45 @@
         		<li class="selectedTab"><a href="Home.html">Home</a></li>
         		<li><a href="Directions.html">Directions</a></li>
         		<li><a href="Contact.html">Contact Info</a></li>
-        		<li><a href="">Play Online</a></li>
-        		<li><a href="">High Scores</a></li>
+        		<li><a href="Pictures.html">Picture Collage</a></li>
+        		<li><a href="High_Scores.html">High Scores</a></li>
         	</ul>
         </nav>
 		
-		<!--
-		PUT ASIDE HERE
-		
-		stlying may be helpful:
-		
-		float: right;
-		right: 5px;
-		position: fixed;
-		
-		<aside id="sidebar">
-			<section id="widget_3">
-				Text
+
+		<aside>
+			<p>
+				<h2>Useful Links</h2>
+			</p>	
+			<hr/>
+			<section>	
+				<p><a href="http://www.boardgamesfor.me/">Discover New Games</a></p>
+				<p><a href = "http://www.amazon.com/Mattel-R1983-Blokus-Game/dp/B001P06GX4">Buy The Game</a></p>
+				<p><a href="http://blokusstrategy.com/?cat=8">Blokus Strategy</a></p>
+			<hr/>
+			<?php
+				$hits = file_get_contents("hits.txt")+1;
+				file_put_contents("hits.txt",$hits);
+				echo("<p> <span id =\"counter\">Total Page Visits: ". $hits."</p> </span>");
+
+	$file = "ip.txt";
+	$arr = file($file);
+		$newName = $_SERVER['REMOTE_ADDR'];
+		$myGuests = file_get_contents($file);
+		if(!in_array($newName."\n", $arr))
+		{
+			$myGuests = $myGuests.$newName."\n";
+			array_push($arr, $newName);
+			file_put_contents("ip.txt",$myGuests);
+			echo("<h2>New Guest Added! Welcome, ".$newName." !</h2>");
+
+		}
+		echo("<p> <span id =\"counter\">Unique Page Visits: ". sizeof($arr)."</p> </span>");
+		?>
+
 			</section>
 		</aside>
-		-->
-		
+		<div id ="content">
 		<img src="http://www.dadsgamingaddiction.com/wp-content/uploads/2012/06/Blokus-2.jpg" 
 					title="Blokus"
 					alt="Image of Blokus in action"
@@ -47,7 +66,7 @@
 		<h2>
 			SITE UNDER CONSTRUCTION!
         </h2>
-    
+		
 		<p> 
 			Blokus is a strategy game for the whole family, and we
 			are proud to present our own virtual implementation of 
@@ -130,15 +149,20 @@
     
 		<hr />
 		
-		<div class="centered">
+		</div>
+		
+			
+		<footer>
 		<p>
+			<a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.citricity.com/images/valid-html5.png"></a>
 			<a href="http://jigsaw.w3.org/css-validator/check/referer">
 				<img style="border:0;width:88px;height:31px"
 				src="http://jigsaw.w3.org/css-validator/images/vcss"
 				alt="Valid CSS!" />
 			</a>
 		</p>
-		</div>
+		
 		
 		<hr />
 		
@@ -148,7 +172,8 @@
 			I have to compete with popular culture, including TV, magazines, 
 			movies and video games&quot; - Murakami 
     	</blockquote>
-    
+		</footer>
 		</div>
+		
     </body>        
 </html>

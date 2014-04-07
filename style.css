@@ -7,10 +7,21 @@
 body {
 	display: block;
 	font-family: Palatino;
-	width:90%;
 	height:100%;
-	margin: 0 auto;
 	background-image:url("http://www.toysrus.com/graphics/media/trus/Aplusplus/2013/072513/3444806/Blokus%20Game_3444806_02.jpg");
+}
+
+.blueBackground {
+	position: relative;
+    margin-left:auto;
+	margin-right: auto;
+	background-color: lightblue;
+	border-radius: 10px;
+	width:80%;
+}
+
+#counter{
+	color: white;
 }
 
 header {
@@ -39,34 +50,60 @@ nav ul li {
 	float: left;
 }
 
-nav ul li a {
+nav ul li a{
 	color: white;
 	display:block; 
 	width:100%;
     text-decoration: none;
 }
 
+
+#content{
+float:right;
+width:80%;
+top:25%;
+height:60%;
+}
+
+
+aside{
+	margin-top: 7px;
+	padding: 0px;
+	float: left;
+	background-color: #451847;
+	position:fixed;
+	width:15.75%;
+	top:20%;
+	height:40%;
+}
+aside p a {
+	color: white;
+	display:block; 
+	width:100%;
+    text-decoration: none;
+}
+
+aside h2 {
+	color: white;
+	display:block; 
+	width:100%;
+    text-align: center;
+}
+
 .selectedTab {
 	background-color: #FF6600;
 }
 
-aside {
-    float: right;
-	position: fixed;
-	right: 5px;
-	margin: 15px;
-	margin-bottom: 200px;
-}
-
 table {
     border: 1px solid black;
-    margin-top:15px;
+    
     max-width: 100%;
 }
 
 td {
     border: 1px solid black;
-    width: 120px;
+    width: 20%;
+	text-align: center;
 }
 
 h1 {
@@ -74,6 +111,7 @@ h1 {
 	padding-top:5px;
     font-size: 250%;
 }
+
 
 h2 {
 	margin-top:5px;
@@ -86,12 +124,7 @@ p {
 ol {
     clear: both;
 }
-.blueBackground {
-    padding: 5px;
-	background-color: lightblue;
-	border-radius: 10px;
-	width:80%;
-}
+
 
 .preferred {
 	background-color: lightgray;
@@ -100,15 +133,47 @@ ol {
 .blokus_img {
     float:left;
 	width:250px;
-	margin:15px;
+	margin-right:15px;
+	margin-left:5px;
 }
 
 .navList {
 	padding: 0px;
 }
 
-.centered {
+footer {
+	clear:both;
     text-align: center;
+	top:85%;
+	height: 15%;
+	width:100%;
+}
+
+.image{
+	height:200px;
+	width: 49%;
+	z-index:0;
+}
+.image2{
+	height:200px;
+	width: 33%;
+	z-index:0;
+}		
+#tux{
+	position:absolute;
+	width :25%;
+	top: 30%;
+	left: 45%;
+	z-index:1;
+	opacity: 0.7;
+}
+
+#ms{
+	position: absolute;
+	top:60%;
+	left: 35%;
+	z-index:2;
+	opacity: 0.7;
 }
 
 #gray {
