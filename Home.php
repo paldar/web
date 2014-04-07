@@ -38,7 +38,7 @@
 			<?php
 				$hits = file_get_contents("hits.txt")+1;
 				file_put_contents("hits.txt",$hits);
-				echo("<p> <span id =\"counter\">Total Page Visits: ". $hits."</p> </span>");
+				echo("<p> <span class =\"whiteText\">Total Page Visits: ". $hits."</p> </span>");
 
 	$file = "ip.txt";
 	$arr = file($file);
@@ -52,10 +52,45 @@
 			echo("<h2>New Guest Added! Welcome, ".$newName." !</h2>");
 
 		}
-		echo("<p> <span id =\"counter\">Unique Page Visits: ". sizeof($arr)."</p> </span>");
+		
+		echo("<p> <span class =\"whiteText\">Unique Page Visits: ". sizeof($arr)."</p> </span>");
 		?>
+		<hr/>
+		<p class = "whiteText">Rate The Page</p>
+		 
 
-			</section>
+		<form action="http://cslamp.colby.edu/tetan/proj02/Home.php">
+		<select name="rating">
+		<?php
+		for($i = 1; $i < 6; $i++){	
+			echo("<option value=\"".$i."\">". $i."</option>");
+		}
+		?>
+		</select>
+		<input type="submit" value="submit" >
+		</form>
+		</section>
+
+		<?php
+			$newRating = $_GET["rating"];
+			if($newRating != null)
+			{
+				$ratings = file_get_contents("rating.txt");
+				if (trim($ratings) == '')
+					file_put_contents("rating.txt",$newRating."\n");
+				else
+					file_put_contents("rating.txt",$ratings.$newRating."\n");
+			}
+			
+			$arr = file("rating.txt");
+			$mean = number_format((float)array_sum($arr)/sizeof($arr), 2, '.', '');
+			$min = min($arr);
+			$max = max($arr);
+			echo("<p class = \"whiteText\"> Mean Rating: ".$mean. "</p>");
+			echo("<p class = \"whiteText\"> Min Rating: ".$min. "</p>");
+			echo("<p class = \"whiteText\"> Max Rating: ".$max. "</p>");
+			
+		?>
 		</aside>
 		<div id ="content">
 		<img src="http://www.dadsgamingaddiction.com/wp-content/uploads/2012/06/Blokus-2.jpg" 

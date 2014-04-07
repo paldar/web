@@ -20,7 +20,7 @@ body {
 	width:80%;
 }
 
-#counter{
+.whiteText{
 	color: white;
 }
 
@@ -74,7 +74,7 @@ aside{
 	position:fixed;
 	width:15.75%;
 	top:20%;
-	height:40%;
+	height:55%;
 }
 aside p a {
 	color: white;
