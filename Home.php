@@ -16,7 +16,7 @@
 		
         <nav>
         	<ul>
-        		<li class="selectedTab"><a href="Home.html">Home</a></li>
+        		<li class="selectedTab"><a href="Home.php">Home</a></li>
         		<li><a href="Directions.html">Directions</a></li>
         		<li><a href="Contact.html">Contact Info</a></li>
         		<li><a href="Pictures.html">Picture Collage</a></li>
