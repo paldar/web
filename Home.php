@@ -21,6 +21,7 @@
         		<li><a href="Contact.html">Contact Info</a></li>
         		<li><a href="Pictures.html">Picture Collage</a></li>
         		<li><a href="High_Scores.html">High Scores</a></li>
+			<li><a href="faq.html">FAQs</a></li>
         	</ul>
         </nav>
 		
@@ -49,7 +50,6 @@
 			$myGuests = $myGuests.$newName."\n";
 			array_push($arr, $newName);
 			file_put_contents("ip.txt",$myGuests);
-			echo("<h2>New Guest Added! Welcome, ".$newName." !</h2>");
 
 		}
 		
@@ -59,7 +59,7 @@
 		<p class = "whiteText">Rate The Page</p>
 		 
 
-		<form action="http://cslamp.colby.edu/tetan/proj02/Home.php">
+		<form action="http://cslamp.colby.edu/tetan/proj03/Home.php">
 		<select name="rating">
 		<?php
 		for($i = 1; $i < 6; $i++){	
