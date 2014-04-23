@@ -20,14 +20,22 @@ last updated: 4/16/14
         function submitComment(clickEvent){
             var textBox=$("commentBox");
             var par=($("content")).appendChild(document.createElement("p"));
-            var commentPar=document.createElement("textarea");
-            var commentButton=document.createElement("button");
-            commentPar.setAttribute("cols", "50");
-            commentPar.setAttribute("rows", "10");
+            par.setAttribute("onclick", "clickOnComment(event)");
+            //par.onclick="clickOnComment()";
+            
             par.appendChild(document.createTextNode(textBox.innerHTML));
+
+        }
+
+        function clickOnComment(eventus){
+            var par=eventus.target;
+            var commentPar=document.createElement("textarea");
+            commentPar.setAttribute("cols", "5");
+            commentPar.setAttribute("rows", "1");
+            var commentButton=document.createElement("button");
+            commentButton.innerHTML="Submit";
             par.appendChild(commentPar);
             par.appendChild(commentButton);
-
         }
 
     </script>
