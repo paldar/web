@@ -22,6 +22,7 @@
         		<li><a href="Pictures.html">Picture Collage</a></li>
         		<li><a href="High_Scores.html">High Scores</a></li>
 			<li><a href="faq.html">FAQs</a></li>
+			<li><a href="Othello/Othello.php">Play Othello!</a></li>
         	</ul>
         </nav>
 		
