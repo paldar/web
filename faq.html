@@ -26,7 +26,7 @@ last updated: 4/16/14
                 <li><a href="Contact.html">Contact Info</a></li>
                 <li><a href="Pictures.html">Picture Collage</a></li>
                 <li><a href="Othello/Othello.php">Othello</a></li>
-                <li class="selectedTab"><a href="faq.html">FAQs</a></li>
+                <li class="selectedTab"><a href="faq.php">FAQs</a></li>
             </ul>
         </nav>
         
@@ -50,10 +50,78 @@ last updated: 4/16/14
                 <li id="li2">  Do I need to pay to play?<button id="2" onclick="getAnswer(event)">Answer</button> </li>
                 <li id="li3">  What is the best strategy for this game?<button id="3    " onclick="getAnswer(event)">Answer</button> </li>
             </ol>
+			<script>
+				var commentArray = new Array();
+				var replyMode = false;
+				
+				function newComment(event){
+					event.stopPropagation();
+					var commentTextArea = document.getElementById("commentBox");
+					var newComment = document.createElement("p");
+					newComment.setAttribute("onclick","reply(event)");
+					var contentPage = document.getElementById("commentSection");
+					newComment.appendChild(document.createTextNode(commentTextArea.value));
+					contentPage.appendChild(newComment );
+					
+					<?php
+				$comment = "<script>document.getElementById(\"commentBox\").value</script>";
+				echo("<p>this is the comment: ".$comment."</p>");
+                $comments = file_get_contents("comments.txt");
+                if (trim($comments) == '')
+                    file_put_contents("comments.txt",$newComment."\n");
+                else
+                    file_put_contents("comments.txt",$comments.$newComment."\n");
 
-
-
-
+            
+        ?>
+					
+				}
+				/*
+				function reply(event){
+					event.stopPropagation();
+					console.log("replying");
+					if(!replyMode){
+						replyMode = true;
+						var comment = event.target;
+						
+						var replyTextArea = document.createElement("textArea");
+						replyTextArea.setAttribute("id", "replyTextArea");
+						var replyButton = document.createElement("button");
+						replyButton.setAttribute("id","replyButton");
+						replyButton.innerHTML = "submit";
+						replyButton.setAttribute("onclick","commentReply(event)");
+						comment.appendChild(replyTextArea);
+						comment.appendChild(replyButton);
+						
+						
+					}
+					
+					
+					
+					
+				}
+				function commentReply(event){
+					event.stopPropagation();
+					var parentComment = event.target.parentNode;
+					var newComment = document.createElement("p");
+					var replyCommentTextArea = document.getElementById("replyTextArea");
+					newComment.appendChild(document.createTextNode(replyCommentTextArea.value));
+					parentComment.appendChild(newComment);
+					parentComment.removeChild(document.getElementById("replyTextArea"));
+					parentComment.removeChild(document.getElementById("replyButton"));
+					replyMode = false;
+					//parentComment.removeChild()
+					
+				}*/
+			
+			
+			</script>
+			<div id="commentSection">
+			<textArea id="commentBox" rows ="10" cols ="60"autocomplete="off">Type your comments here...</textArea>
+			<button onclick="newComment(event)">Submit</button>
+			</div>
+			<div id="replySection">
+			</div>
 
 
         </div>

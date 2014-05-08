@@ -8,7 +8,7 @@ last updated: 3/18/14
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>High Scores</title>
+        <title>Othello</title>
         <link href="../style.css" type="text/css" rel="stylesheet" />
             <script type="text/javascript" src="lib/prototype.js"></script>
             <script type="text/javascript" src="HumanPlayer.js"></script>
@@ -39,7 +39,7 @@ last updated: 3/18/14
                 <li><a href="../Contact.html">Contact Info</a></li>
                 <li><a href="../Pictures.html">Picture Collage</a></li>
                 <li class="selectedTab"><a href="#">Othello</a></li>
-                <li><a href="../faq.html">FAQs</a></li>
+                <li><a href="../faq.php">FAQs</a></li>
             </ul>
         </nav>
         
@@ -51,7 +51,7 @@ last updated: 3/18/14
             <section>    
                 <p><a href="http://www.boardgamesfor.me/">Discover New Games</a></p>
                 <p><a href = "http://www.amazon.com/Mattel-R1983-Othello-Game/dp/B001P06GX4">Buy The Game</a></p>
-                <p><a href="http://blokusstrategy.com/?cat=8">Othello Strategy</a></p>
+                <p><a href="http://radagast.se/othello/Help/strategy.html">Othello Strategy</a></p>
             </section>
         </aside>
         

@@ -21,7 +21,7 @@
                 <li><a href="Contact.html">Contact Info</a></li>
                 <li><a href="Pictures.html">Picture Collage</a></li>
             <li><a href="Othello/Othello.php">Play Othello!</a></li>
-            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="faq.php">FAQs</a></li>
             </ul>
         </nav>
         
@@ -34,7 +34,7 @@
             <section>    
                 <p><a href="http://www.boardgamesfor.me/">Discover New Games</a></p>
                 <p><a href = "http://www.amazon.com/Mattel-R1983-Othello-Game/dp/B001P06GX4">Buy The Game</a></p>
-                <p><a href="http://blokusstrategy.com/?cat=8">Othello Strategy</a></p>
+                <p><a href="http://radagast.se/othello/Help/strategy.html">Othello Strategy</a></p>
             <hr/>
             <?php
                 $hits = file_get_contents("hits.txt")+1;
@@ -93,7 +93,7 @@
         ?>
         </aside>
         <div id ="content">
-        <img src="http://www.dadsgamingaddiction.com/wp-content/uploads/2012/06/Othello-2.jpg" 
+        <img src="http://priorypost.files.wordpress.com/2012/04/othello.jpeg" 
                     title="Othello"
                     alt="Image of Othello in action"
                     class="blokus_img"> 
@@ -108,7 +108,7 @@
             this game.
         </p>
         <p>
-        Othello (pronounced like "block us") is an abstract strategy board
+        Othello (like the Moor from the Shakespeare play) is an abstract strategy board
         game for two to four players, invented by Bernard Tavitian and first
         released in 2000 by Sekkoïa, a French company. It has won several
         awards, including the Mensa Select award and the 2004 Teacher's Choice
@@ -178,7 +178,7 @@
             <li>Kyle G Burke(KGB)</li>
             <li>DJ Skrien</li>
             <li>Othello.co Inc.</li>
-            <li><a href="http://www.dadsgamingaddiction.com">dadsgamingaddiction.com</a> for the image</li>        
+           
         </ul>
         </p>
     
