@@ -127,10 +127,10 @@ ol {
 
 
 .preferred {
-	background-color: lightgray;
+	background-color: yellow;
 }
 
-.blokus_img {
+.othello_img {
     float:left;
 	width:250px;
 	margin-right:15px;

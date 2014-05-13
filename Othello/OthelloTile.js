@@ -65,60 +65,6 @@ var OthelloTile = Class.create({
 			this.j + ", " + this.i + ") and sideLength of " + this.sideLength; 
 	},
 	
-	/**
-	 * Sets the color for this square.
-	 *
-	setColor: function(color) {
-		this.color = color;
-		this.rect.setAttributeNS(null, "class", this.color + "Square");
-	},*/
-	
-	/**
-	 * Draws this.
-	 *
-	draw: function(canvas) {
-		
-		// should we put namespace into here instead of null?
-		this.rect.setAttributeNS(null, "x", this.x);
-		this.rect.setAttributeNS(null, "y", this.y);
-		this.rect.setAttributeNS(null, "width", this.sideLength);
-		this.rect.setAttributeNS(null, "height", this.sideLength);
-		this.rect.setAttributeNS(null, "class", this.color + "Square");
-		canvas.appendChild(this.rect);
-		
-		this.rect.setAttributeNS(null, "x", this.x);
-		this.rect.setAttributeNS(null, "y", this.y);
-		this.rect.setAttributeNS(null, "width", this.sideLength);
-		this.rect.setAttributeNS(null, "height", this.sideLength);
-		this.rect.setAttributeNS(null, "class", this.color + "Square");
-		canvas.appendChild(this.rect);
-		
-		
-		var selfTile = this;
-		this.rect.onclick = function(event) {
-			var r = selfTile.rect;
-			
-			if (selfTile.circ == null) {
-				selfTile.circ = selfTile.makeNewDisc("red");
-				console.log(selfTile.circ);
-				selfTile.controller.getCanvas().appendChild(selfTile.circ);
-			}
-			
-			var curClass = r.getAttribute("class");
-			if (curClass.localeCompare("graySquare") == 0) {
-				r.color = "blue";
-			} else if (curClass.localeCompare("blueSquare") == 0) {
-				r.color = "red";
-			} else if (curClass.localeCompare("redSquare") == 0) {
-				r.color = "gray";
-			}
-			r.setAttributeNS(null, "class", r.color + "Square");
-			//console.log(this.x + ", " + this.y)
-			//var curPlayer = this.controller.players[this.controller.currentPlayer];
-			//curPlayer.handleClick(event);
-		};
-	},*/
-	
 	/*
 	makeNewDisc: function(color) {
 		var circle = document.createElementNS(this.controller.getNameSpace(), "circle");

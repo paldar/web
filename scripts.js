@@ -9,7 +9,7 @@ answerArray[0] = " It is recommended that players be at least 10 years old";
 answerArray[1] = " Between two and four players can play this game";
 answerArray[2] = "NO";
 answerArray[3] = "see the links in the sidebar";
-
+var writing = false;
 
 //Generates an answer to a given question based on the button click.
 //Check to see if an answer is already showing. If so, remove that answer
@@ -56,3 +56,39 @@ function getAnswer(event){
 
 
 	}
+	
+function genCommentBox(event, parentTime){
+	writing = true;
+	var buttonObject = event.target.parentNode;
+	var form = document.createElement("form");
+	
+	form.setAttribute("action", "faq.php");
+	var textArea = document.createElement("textArea");
+	var time = document.createElement("textArea");
+	time.setAttribute("style", "display:none");
+	time.setAttribute("name","parent");
+	time.value = parentTime;
+	
+	textArea.setAttribute("name", "subComment");
+	form.appendChild(textArea);
+	form.appendChild(time);
+	var button = document.createElement("input");
+	
+	var time = document.createElement("textArea");
+	
+	
+	button.setAttribute("type", "submit");
+	button.setAttribute("value", "Submit");
+	form.appendChild(button);
+	
+	buttonObject.appendChild(form);
+	buttonObject.removeChild(event.target);	
+}
+
+function genSubComment(parentTime, text, time){
+	console.log("parent time:"+ parentTime);
+	var parent = document.getElementById(parentTime);
+	var subComment = document.createElement("li");
+	subComment.innerHTML = text+", "+ time;
+	parent.appendChild(subComment);
+}

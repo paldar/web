@@ -39,7 +39,7 @@ last updated: 4/16/14
             <hr/>
             <section>    
                 <p><a href="http://www.boardgamesfor.me/">Discover New Games</a></p>
-                <p><a href = "http://www.amazon.com/Mattel-R1983-Othello-Game/dp/B001P06GX4">Buy The Game</a></p>
+                <p><a href = "http://www.amazon.com/Mattel-B3165-Othello/dp/B00004TQMQ/ref=sr_1_2?ie=UTF8&qid=1399747657&sr=8-2&keywords=othello+game">Buy The Game</a></p>
                 <p><a href="http://radagast.se/othello/Help/strategy.html">Othello Strategy</a></p>
             </section>
         </aside>
@@ -57,29 +57,40 @@ last updated: 4/16/14
 				<textarea id = "commentBox" name="comment" rows="5" cols="40"></textarea>
 				<input id ="submitButton" type ="submit" name="submit" value="Submit">
 			</form>
-			<script type="text/javascript" src="./projectUpload.js"></script>
+			<script type="text/javascript" src="./commentRefresh.js"></script>
 			<hr/>	
 			<div id="commentSection">
-			
 
-			
 			<?php
 				if(isset($_GET['comment'])){
-					$test = $_GET['comment'];
-					$con=mysqli_connect("localhost","tetan","cdeufmhsw","test");
+					$comment = $_GET['comment'];
+					$con=mysqli_connect("localhost","tetan","cdeufmhsw","tetan");
 					// Check connection
 					if (mysqli_connect_errno()) {
 					  echo "Failed to connect to MySQL: " . mysqli_connect_error();
 					}
 					$curTime = time();
-					mysqli_query($con,"INSERT INTO comments (ID, Message, Time) VALUES ( ".$curTime." ,\"".$test."\", ".$curTime." )");
+					mysqli_query($con,"INSERT INTO comments (ID, Message, Time) VALUES ( ".$curTime." ,\"".$comment."\", ".$curTime." )");
 
 					mysqli_close($con);
 				}
-				
-				include 'loadTables.php';
             ?>
-			
+			<?php
+				if(isset($_GET['subComment'])){
+					$subComment = $_GET['subComment'];
+					$parentTime = $_GET['parent'];
+					$con=mysqli_connect("localhost","tetan","cdeufmhsw","tetan");
+					// Check connection
+					if (mysqli_connect_errno()) {
+					  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+					}
+					$curTime = time();
+					mysqli_query($con,"INSERT INTO subComments (ParentID, Message, Time) VALUES ( ".
+								$parentTime." ,\"".$subComment."\", ".$curTime." )");
+
+					mysqli_close($con);
+				}
+			?>
 			</div>
 
         </div>

@@ -10,12 +10,12 @@ last updated: 3/18/14
         <meta charset="utf-8"/>
         <title>Othello</title>
         <link href="../style.css" type="text/css" rel="stylesheet" />
-            <script type="text/javascript" src="lib/prototype.js"></script>
-            <script type="text/javascript" src="HumanPlayer.js"></script>
-            <script type="text/javascript" src="OthelloBoard.js"></script>
-            <script type="text/javascript" src="OthelloTile.js"></script>
-            <script type="text/javascript" src="OthelloView.js"></script>
-            <script type="text/javascript" src="OthelloController.js"></script>
+		<script type="text/javascript" src="lib/prototype.js"></script>
+		<script type="text/javascript" src="HumanPlayer.js"></script>
+		<script type="text/javascript" src="OthelloBoard.js"></script>
+		<script type="text/javascript" src="OthelloTile.js"></script>
+		<script type="text/javascript" src="OthelloView.js"></script>
+		<script type="text/javascript" src="OthelloController.js"></script>
     </head>
 
     <body>
@@ -50,25 +50,26 @@ last updated: 3/18/14
             <hr/>
             <section>    
                 <p><a href="http://www.boardgamesfor.me/">Discover New Games</a></p>
-                <p><a href = "http://www.amazon.com/Mattel-R1983-Othello-Game/dp/B001P06GX4">Buy The Game</a></p>
+                <p><a href = "http://www.amazon.com/Mattel-B3165-Othello/dp/B00004TQMQ/ref=sr_1_2?ie=UTF8&qid=1399747657&sr=8-2&keywords=othello+game">Buy The Game</a></p>
                 <p><a href="http://radagast.se/othello/Help/strategy.html">Othello Strategy</a></p>
             </section>
         </aside>
         
         <div id="content">
 
-    <svg xmlns = "http://www.w3.org/2000/svg" id = "drawingBoard" 
-            width = "<?php echo ($xo + $numCols * $width);?>" 
-            height = "<?php echo ($yo + $numRows * $width);?>">
-    </svg>
-            <script>
-                var numRows = <?php echo $numRows?>;
-                var numCols = <?php echo $numCols?>;
-                var sideLength = <?php echo $width?>;
-                var xo = <?php echo $xo?>;
-                var yo = <?php echo $yo?>;
-                </script>
-            <script type="text/javascript" src="./Main.js"></script>
+			<svg xmlns="http://www.w3.org/2000/svg" id="drawingBoard"
+					width="<?php echo ($xo + $numCols * $width + 3*$width);?>"
+					height="<?php echo ($yo + $numRows * $width);?>">
+				</svg>
+				<script>
+					var numRows = <?php echo $numRows?>;
+					var numCols = <?php echo $numCols?>;
+					var sideLength = <?php echo $width?>;
+					var xo = <?php echo $xo?>;
+					var yo = <?php echo $yo?>;
+				</script>
+				
+				<script type="text/javascript" src="Main.js"></script>
 
         </div>
         <footer>

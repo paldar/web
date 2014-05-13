@@ -30,8 +30,10 @@ var OthelloController = Class.create({
 				tile.setOwner((i+j)%2);
 				var color = (i+j)%2 == PLAYER_1 ? "white" : "black";
 				this.getView().colorTile(tile, color, "1");
-			}
-		}
+			};
+		};
+		
+		this.updatePlayerScores();
     },
     
     /**
@@ -77,10 +79,34 @@ var OthelloController = Class.create({
 		};
 		
 		this.nextPlayersTurn();
+		
+		this.updatePlayerScores();
     },
     
     /**
-     * 
+     * Update the player scores off to the right of the board. 
+     */
+    updatePlayerScores: function() {
+    	var numP1Tiles = 0;
+    	var numP2Tiles = 0;
+    	for (var i = 0; i < this.board.getNumRows(); i++) {
+			for (var j = 0; j < this.board.getNumCols(); j++) {
+				var tile = this.board.getTileAt(i, j);
+				if (tile.getOwner() == PLAYER_1) {
+					numP1Tiles += 1;
+				} else if (tile.getOwner() == PLAYER_2) {
+					numP2Tiles += 1;
+				};
+	        };
+        };
+        
+        $("Player_1_Score").textContent = ("" + numP1Tiles);
+        $("Player_2_Score").textContent = ("" + numP2Tiles);
+    },
+    
+    /**
+     * Tells if there exists a current players tile in the
+     * specified direction. 
      */
     existsCurrentPlayersTileAtDirection: function(i, j, dx, dy) {
     	var tile = this.board.getTileAt(i, j);
@@ -148,7 +174,14 @@ var OthelloController = Class.create({
     },
     
     getCurPlayerColor: function() {
-    	return (this.currentPlayer == PLAYER_1) ? "white" : "black";
+    	return this.getPlayerColor(this.currentPlayer);
+    },
+    
+    getPlayerColor: function(player) {
+    	if (player == EMPTY) {
+    		return "green";
+    	}
+    	return (player == PLAYER_1) ? "white" : "black";
     },
     
     /**

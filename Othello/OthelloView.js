@@ -26,9 +26,35 @@ var OthelloView = Class.create({
 		for (var i = 0; i < board.getNumRows(); i++) {
 			for (var j = 0; j < board.getNumCols(); j++) {
 				var tile = board.getTileAt(i, j);
-				this.drawTile(tile);
+				this.drawTile(tile, true);
 			}
 		}
+		
+		// For the scoring board
+		for (var i = 0; i < 2; i++) {
+			for (var j = 0; j < 2; j++) {
+				var player = EMPTY;
+				if (i == 0) {
+					player = j;
+				}
+				
+				var tile = new OthelloTile(
+						board.getNumRows() + 1 + i, 3 + j, player);
+				this.drawTile(tile, false);
+				this.colorTile(tile, this.controller.getPlayerColor(player), "1");
+				
+				if (i == 1) {
+					var playerText = document.createElementNS(this.controller.getNameSpace(), "text");
+					playerText.setAttributeNS(null, "x", this.xo + this.sideLength*(tile.getI()) + 0.25*this.sideLength);
+					playerText.setAttributeNS(null, "y", this.yo + this.sideLength*(tile.getJ()) + 0.7*this.sideLength);
+					playerText.setAttributeNS(null, "font-size", 36);
+					var id = "Player_" + (j + 1) + "_Score";
+					playerText.setAttributeNS(null, "id", id);
+					this.canvas.appendChild(playerText);
+				}
+				
+			};
+		};
     },
     
     /**
@@ -42,7 +68,7 @@ var OthelloView = Class.create({
     /**
      * Draws an othello tile.
      */
-    drawTile: function(tile) {
+    drawTile: function(tile, setOnClicks) {
     	var rect = document.createElementNS(this.controller.getNameSpace(), "rect");
     	rect.setAttributeNS(null, "x", this.xo + this.sideLength*(tile.getI()));
 		rect.setAttributeNS(null, "y", this.yo + this.sideLength*(tile.getJ()));
@@ -54,20 +80,23 @@ var OthelloView = Class.create({
 		var circ = document.createElementNS(this.controller.getNameSpace(), "circle");
 		circ.setAttributeNS(null, "cx", this.xo + this.sideLength*(tile.getI()) + this.sideLength/2);
 		circ.setAttributeNS(null, "cy", this.yo + this.sideLength*(tile.getJ()) + this.sideLength/2);
-		circ.setAttributeNS(null, "r", this.sideLength/2 -3);
+		circ.setAttributeNS(null, "r", this.sideLength/2 - 3);
 		
-		var self = this;
-		var oncl = function() {
-			self.controller.tileClicked(tile.getI(), tile.getJ());
-		};
 		
-		rect.onclick = oncl;
-		circ.onclick = oncl;
+		if (setOnClicks) {
+			var self = this;
+			var oncl = function() {
+				self.controller.tileClicked(tile.getI(), tile.getJ());
+			};
+			
+			rect.onclick = oncl;
+			circ.onclick = oncl;
 
-		circ.setAttributeNS(null, "onmouseover", "controller.mousedOver(" + tile.getI() + ", " +
-				tile.getJ() + ");");
-		circ.setAttributeNS(null, "onmouseout", "controller.mouseOut(" + tile.getI() + ", " +
-				tile.getJ() + ");");
+			circ.setAttributeNS(null, "onmouseover", "controller.mousedOver(" + tile.getI() + ", " +
+					tile.getJ() + ");");
+			circ.setAttributeNS(null, "onmouseout", "controller.mouseOut(" + tile.getI() + ", " +
+					tile.getJ() + ");");
+		}
 		
 		tile.setCirc(circ);
 		this.colorTile(tile, "green", "1");
@@ -86,63 +115,4 @@ var OthelloView = Class.create({
 		return "A OthelloView with: controller = " + this.controller; 
 	}
     
-    /**
-     * Selects a piece.
-     *
-    selectPiece: function(piece) {
-        this.selectedPiece = piece;
-        this.selectedPiece.style.stroke = "Purple";
-    },*/
-    
-    /**
-     * Deselect piece.
-     *
-    deselectPiece: function() {
-        this.selectedPiece.style.stroke = "Black";
-        this.selectedPiece = undefined;
-    },*/
-    
-    /**
-     * Handles a mouse click.
-     *
-    getNextPositionFromClick: function(event, currentPlayer, containerElement) {
-        var clickedPiece = event.target;
-        if (this.selectedPiece == undefined) {
-            //select the clicked piece, if appropriate
-            if (currentPlayer == clickedPiece.player) {
-                this.selectPiece(clickedPiece);
-            }
-            return null; //no new move from this
-        } else {
-            if (currentPlayer == clickedPiece.player) {
-                this.deselectPiece();
-                return null;
-            } else {
-                //measure the distance between centers
-                //console.log(clickedPiece.cx.baseVal.value + ", " + this.selectedPiece.cx.baseVal.value);
-                var xDistance = Math.abs(clickedPiece.cx.baseVal.value - this.selectedPiece.cx.baseVal.value);
-                var yDistance = Math.abs(clickedPiece.cy.baseVal.value - this.selectedPiece.cy.baseVal.value);
-                var pieceDistance = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
-                if (pieceDistance < 105) {
-                    var nextPieces = [[], []]; //nextPieces: 0th list will be blue, 1th red
-                    var boardSvg = containerElement.lastChild;
-                    var boardElements = boardSvg.childNodes;
-                    for (var i = 0; i < boardElements.length; i++) {
-                        if (boardElements[i] == this.selectedPiece) {
-                            nextPieces[this.selectedPiece.player].push([(clickedPiece.cx.baseVal.value - 50) / 100, (clickedPiece.cy.baseVal.value - 50) / 100]);
-                        } else if (boardElements[i] != clickedPiece && boardElements[i].player != undefined) {
-                            var piece = boardElements[i];
-                            nextPieces[piece.player].push([(piece.cx.baseVal.value - 50)/100, (piece.cy.baseVal.value - 50) / 100]);
-                        }
-                    }
-                    this.deselectPiece();
-                    return new Clobber(this.position.width, this.position.height, nextPieces[0], nextPieces[1]);
-                    
-                } else {
-                    this.deselectPiece();
-                    return null;
-                }
-            }
-        }
-    }*/
 });

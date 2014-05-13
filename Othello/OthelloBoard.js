@@ -21,9 +21,9 @@ var OthelloBoard = Class.create({
 			var row = [];
 			for (var j = 0; j < this.numCols; j++) {
 				row.push(new OthelloTile(i, j, EMPTY));
-	        }
+	        };
 			this.gameData.push(row);
-        }
+        };
 	},
 	
 	/**

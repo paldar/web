@@ -33,7 +33,7 @@
             <hr/>
             <section>    
                 <p><a href="http://www.boardgamesfor.me/">Discover New Games</a></p>
-                <p><a href = "http://www.amazon.com/Mattel-R1983-Othello-Game/dp/B001P06GX4">Buy The Game</a></p>
+                <p><a href = "http://www.amazon.com/Mattel-B3165-Othello/dp/B00004TQMQ/ref=sr_1_2?ie=UTF8&qid=1399747657&sr=8-2&keywords=othello+game">Buy The Game</a></p>
                 <p><a href="http://radagast.se/othello/Help/strategy.html">Othello Strategy</a></p>
             <hr/>
             <?php
@@ -96,23 +96,22 @@
         <img src="http://priorypost.files.wordpress.com/2012/04/othello.jpeg" 
                     title="Othello"
                     alt="Image of Othello in action"
-                    class="blokus_img"> 
-        
-        <h2>
-            SITE UNDER CONSTRUCTION!
-        </h2>
-        
+                    class="othello_img"> 
+  
         <p> 
             Othello is a strategy game for the whole family, and we
             are proud to present our own virtual implementation of 
             this game.
         </p>
         <p>
-        Othello (like the Moor from the Shakespeare play) is an abstract strategy board
-        game for two to four players, invented by Bernard Tavitian and first
-        released in 2000 by Sekkoïa, a French company. It has won several
-        awards, including the Mensa Select award and the 2004 Teacher's Choice
-        Award. In 2009, the game was sold to Mattel.
+        Othello (like the Moor from the Shakespeare play) is a strategy board game for two players,
+		played on an 8×8 uncheckered board. There are sixty-four identical game pieces called disks 
+		(often spelled "discs"), which are light on one side and dark on the other. Players take turns 
+		placing disks on the board with their assigned color facing up. During a play, any disks of the 
+		opponent's color that are in a straight line and bounded by the disk just placed and another
+		disk of the current player's color are turned over to the current player's color. The object of 
+		the game is to have the majority of disks turned to display your color when the last playable
+		empty square is filled.
         </p>
         
         <p>
@@ -122,49 +121,32 @@
         </p>
         <hr />
         <h2>
-            Othello Duo/Travel Othello
+            Origin
         </h2>
         <p>
-    Othello Duo is for two players only, and uses a smaller (14×14) board; the piece
-    colors are purple and orange. The two starting squares are placed, not in the
-    corner (as in the original Othello game) but nearer to the centre.  This makes a
-    crucial difference in the flavour of the game, because players' pieces may (and
-    usually do) touch after the first move. Even more than with the original game,
-    Othello Duo is an offence-centred game; it is also a much purer strategy game
-    than the four-player game, since one is not in danger of getting ganged up on by
-    three other players (as sometimes happens with the four-player version).
-        </p>
-    
-        <hr />
-        <h2>
-            Video games
-        </h2>
-        <p>
-        Funkitron developed a PC casual game version of Othello called Othello World Tour.
-        Released in December 2007, Othello World Tour was similar to the board
-        game version of Othello while adding 16 playable characters, music and
-        sound effects, and multiple game modes including a tour mode, quick
-        play, and Othello Challenges. For some time, there was an official
-        online version of Othello where visitors could play with opponents all
-        over the world. Mattel suspended the online game on May 18, 2012,
-        stating it did not meet its playability standards. It is now possible
-        to play blokus online at Pentolla.com. The PlayStation Portable has
-        Othello Portable: Steambot Championship, which features characters from
-        Steambot Chronicles playing the Classic, Travel, and Duo versions of the
-        game.  A Gameloft developed version of Othello was released for iPhone,
-        iPod touch, and iPad in April 2010, featuring the Classic and Duo
-        versions of the game, local and online multiplayer gameplay, and single
-        player tournament mode. A clone named Quadrus, is available since
-        January 2014. As of January 2014, the Gameloft version of Othello is
-        no longer available from the App Store. Currently, the officially
-        licensed Othello app is developed by Magmic, and is available for iPhone,
-        iPod touch, and iPad. This version includes solo play and multiplayer
-        options, integrating the user's Facebook and Game Center friends and
-        allowing them to compete on a tournament leader-board.  There is also
-        some open source software based on the same concept of polyominoes as
-        blokus does, for example Blokish, Blockem, Freebloks or
-        Pentobi for desktop and Freebloks or Blokish for Android
-        smartphones.
+			The modern version is based on the game Reversi that was invented 
+			in 1883 by either of two English men (each claiming the other a fraud), 
+			Lewis Waterman or John W. Mollett (or perhaps earlier by someone else entirely),
+			and gained considerable popularity in England at the end of the nineteenth century.
+			The game's first reliable mention is in the August twenty-first 1886 edition of 
+			The Saturday Review. Later mention includes an 1895 article in The New York Times: 
+			"Reversi is something like Go Bang, and is played with 64 pieces." In 1893, the 
+			well-known German games publisher Ravensburger started producing the game as one
+			of its first titles. Two 18th-century continental European books dealing with a game 
+			that may or may not be Reversi are mentioned on page fourteen of the Spring 1989 Othello
+			Quarterly, and there has been speculation, so far without documentation, 
+			that the game has even more ancient origins. 
+		</p>
+		<p>
+			The current most regularly used rule-set—the one used on the international tournament 
+			stage—originated in Mito, Ibaraki, Japan in the 1970s.The Japanese game company Tsukuda 
+			Original registered the game under the trademark name Othello. The name was selected as
+			a reference to the Shakespearean play Othello, the Moor of Venice, referring 
+			to the conflict between the Moor Othello and Iago, and more controversially, to the unfolding drama 
+			between Othello, who is black, and Desdemona, who is white. The green color of the board is inspired 
+			by the image of the general Othello, valiantly leading his battle in a green field. It can also be 
+			likened to a jealousy competition (jealousy being the central theme in Shakespeare's play), since 
+			players engulf the pieces of the opponent, thereby turning them to their possession.
         
         </p>
         <hr />
@@ -177,7 +159,8 @@
         <ul>
             <li>Kyle G Burke(KGB)</li>
             <li>DJ Skrien</li>
-            <li>Othello.co Inc.</li>
+            <li>Pressman Toy Corporation</li>
+			<li>wikipedia (for information)</li>
            
         </ul>
         </p>
